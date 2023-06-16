@@ -5,11 +5,14 @@ const Rating = require("../Model/Rating");
 
 
 //Create Recipe
-router.post("/createRecipe",async ({ body: { recipeTitle, ingredient, howToMake } }, res) => {
+router.post("/createRecipe",async ({ body: { menu, cooking_time, kcal,category,ingredient,recipe } }, res) => {
     const newRecipe = new Recipes({
-      recipeTitle,
+      menu,
+      cooking_time,
+      kcal,
+      category,
       ingredient,
-      howToMake
+      recipe
     });
 
     try {
